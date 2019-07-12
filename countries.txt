@@ -1,0 +1,10 @@
+China	1000000000
+bolivia	50000
+Monte Negro	622000
+France	67000000
+Brazil	209000000
+Canada	37000000
+Denmark	5000000
+Uruguay	3400000
+Iceland	338000
+3	500

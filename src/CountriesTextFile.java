@@ -2,12 +2,10 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CountriesTextFile {
-	
 	private static FileLinesHelper linesHelper = new FileLinesHelper("countries.txt");
-	
+
 	private static Country convertLineToItem(String line) {
 		String[] parts = line.split("\t");
 		Country country = new Country();
@@ -15,7 +13,7 @@ public class CountriesTextFile {
 		country.setPopulation(Integer.parseInt(parts[1]));
 		return country;
 	}
-	
+
 	private static String convertItemToLine(Country country) {
 		return String.format("%s\t%d", country.getName(), country.getPopulation());
 	}
@@ -28,7 +26,7 @@ public class CountriesTextFile {
 		}
 		return items;
 	}
-	
+
 	public static void rewriteFile(List<Country> items) throws IOException {
 		List<String> lines = new ArrayList<>(items.size());
 		for (Country item : items) {
@@ -36,7 +34,7 @@ public class CountriesTextFile {
 		}
 		linesHelper.rewriteFile(lines);
 	}
-	
+
 	public static void appendToFile(Country item) throws IOException {
 		String line = convertItemToLine(item);
 		linesHelper.appendToFile(line);
